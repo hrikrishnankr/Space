@@ -6,8 +6,21 @@
 	<script type="text/javascript" src="../lib/angular/angular.js"></script>
 	<script type="text/javascript" src="../lib/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="../routes.js"></script>
+	<link rel="stylesheet" href="../assets/stylesheets/layout.css">
 </head>
 <body>
-	<div ng-view></div>
+	<header>
+		<div class="logo">
+			<a href="#/dashboard"><img src="../assets/images/logo.png" alt="Space"></a>
+		</div>
+		<div class="pull_right">
+			
+		</div>
+	</header>
+	<aside></aside>
+	<main>
+		<div ng-view></div>
+	</main>
+	<footer></footer>
 </body>
 </html>
