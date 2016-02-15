@@ -1,19 +1,66 @@
 <h1>Request Vacation</h1>
-<div>
-	<div>
-		<span>No of vacation Remaining</span><span>0</span>
-		<span>No of loss of pay taken</span><span>0</span>
+<div class="field">
+	<div class="counts">
+		<span class="count-1">No of vacation Remaining <span>0</span></span>
+		<span class="count-2">No of loss of pay taken <span>0</span></span>
 	</div>
-	<form ng-controller="vacationController">
-		<div>
-			<label>No: of Days</label>
-			<input type="text" ng-model="noDays"/>
+	<br><br>
+	<form ng-controller="vacationController" ng-submit="submit()">
+		<div class="no_days">
+			<div>No: of Days</div>
+			<input type="text" ng-model="noDays" name="noDays" />	
 		</div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
+		<div class="from">
+			<div>Vacation From <span style="color:#666666;">[DD/MM/YYYY]</span></div>
+			<div>
+				<input type="text" ng-model="from" name="noDays" /><br>
+				<span><input type="checkbox" ng-model="afternoon" name="afternoon">afternoon only</span>
+			</div>
+		</div>
+		<div class="to">
+			<div>To <span style="color:#666666;">[DD/MM/YYYY]</span></div>
+			<div>
+				<input type="text" ng-model="to" name="to"><br>
+				<span><input type="checkbox" ng-model="forenoon" name="forenoon">forenoon only</span>
+			</div>
+		</div>
+		<br><br>
+		<div class="vacation_type">
+			<div>Type of vacation</div>
+			<div>
+				<select ng-model="vacationType" name="vacationType">
+					<option value="1">Loss of Pay</option>
+					<option value="2">Compensatory</option>
+					<option value="3">Maternity</option>
+					<option value="4">Paternity</option>
+				</select>
+			</div>
+		</div>
+		<div class="send_to">
+			<div>Send Request To</div>
+			<div>
+				<select ng-model="sendTo" name="sendTo">
+					<option>----------</option>
+				</select>
+			</div>
+		</div>
+		<br><br>
+		<div class="send_copy_to">
+			<span>
+				<div>Send Copy To</div>
+				<input ng-model="sendCopyTo" name="sendCopyTo"/>	
+			</span>
+		</div>
+		<br><br>
+		<div class="comment">
+			<span>
+				<div>Comments</div>
+				<div><textarea name="comments"  ng-model="comments"></textarea></div>
+			</span>
+		</div>
+		<div>
+			<input type="submit" name="submit" id="submit" value="submit">
+		</div>
 	</form>
 </div>
 <h3>My History</h3>
