@@ -1,0 +1,86 @@
+body{
+	margin: 0px;
+}
+
+header{
+	width: 100%;
+	height: 70px;
+	background: #2C3742;
+}
+
+header .logo {
+	height: 70px;
+	display: inline-block;
+	margin: 8px;
+}
+
+.pull_right {
+	float:right;
+}
+
+.logout, .hamburger {
+	height: 70px;
+	width: 40px;
+	text-align: center;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.logout a, .hamburger a{
+	margin-top: 20px;
+}
+
+.logout a i, .hamburger a i{
+	font-size: 24px;
+	color: #fff;
+}
+
+aside {
+	float: left;
+	height: 500px;
+	border-right: 1px solid #cacaca;
+	width: 15%;
+}
+
+aside div {
+	display: block;
+	width: 100%;
+	height: 60px;
+	font-size: 18px;
+	cursor: pointer;
+	margin-left: 20px;
+}
+
+aside div a{
+	text-decoration: none;
+	color: #000;
+}
+
+aside .profile_pic {
+	margin-top: 7px;
+	margin-bottom: 10px;
+}
+
+aside .profile_pic img{
+	height: 50px;
+	width: 50px;
+	vertical-align: middle;
+	margin-top: 8px;
+}
+
+aside .profile_pic span{
+	font-size: 16px;
+}
+
+main {
+	float: left;
+	min-height: 543px;
+	max-width: 85%;
+}
+
+footer{
+	clear: both;
+	width: 100%;
+	height: 70px;
+	background:  #2C3742;
+}
