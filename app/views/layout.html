@@ -3,9 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Space</title>
+	<!--libraries -->
 	<script type="text/javascript" src="../lib/angular/angular.js"></script>
 	<script type="text/javascript" src="../lib/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="../lib/angular-resource/angular-resource.js"></script>
+	
+	<!-- services -->
+	<script type="text/javascript" src="../services/currentUserService.js"></script>
+
+	<!--controllers-->
+	<script type="text/javascript" src="../controllers/menubarController.js"></script>
+
+	<!-- route file -->
 	<script type="text/javascript" src="../routes.js"></script>
+	
+	<!-- style sheets-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../assets/stylesheets/layout.css">
 </head>
 <body>
@@ -14,10 +27,63 @@
 			<a href="#/dashboard"><img src="../assets/images/logo.png" alt="Space"></a>
 		</div>
 		<div class="pull_right">
-			
+			<div class="hamburger pull_right">
+				<a href="#"><i class="fa fa-bars"></i></a>
+			</div>
+			<div class="logout pull_right">
+				<a href="#/logout"><i class="fa fa-sign-out"></i></a>
+			</div>
+			<!-- Employee search comes here -->
 		</div>
 	</header>
-	<aside></aside>
+	<aside ng-controller="menubarController"> 
+		<div class="profile_pic"> 
+			<img ng-src="{{user[0]['profile_pic']}}"> 
+			<span>{{user[0]['name']}}</span> 
+		</div>
+		<div class="dashboard">
+			<a href="#dashboard">
+				<i class="fa fa-home"></i>
+				<span>Dashboard</span>
+			</a>
+		</div>
+		<div class="employees">
+			<a href="#">
+				<i class="fa fa-user"></i>
+				<span>Employees</span>
+			</a>
+		</div>
+		<div class="projects">
+			<a href="#projects">
+				<i class="fa fa-briefcase"></i>
+				<span>Projects</span>
+			</a>
+		</div>
+		<div class="customers">
+			<a href="#">
+				<i class="fa fa-users"></i>
+				<span>Customers</span>
+			</a>
+		</div>
+		<div class="status_report">
+			<a href="#">
+				<i class="fa fa-file-text"></i>
+				<span>Status Report</span>
+			</a>
+		</div>
+		<div class="vacation">
+			<a href="#vacation">
+				<i class="fa fa-plane"></i>
+				<span>Vacation</span>
+			</a>
+		</div>
+		<div class="todo">
+			<a href="#">
+				<i class="fa fa-list"></i>
+				<span>Todo</span>
+			</a>
+		</div>
+	</aside>
 	<main>
 		<div ng-view></div>
 	</main>
