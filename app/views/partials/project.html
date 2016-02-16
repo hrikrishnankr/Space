@@ -124,15 +124,18 @@
                     Description
                 </td>
                 <td>
-                    <input type="text" ng-model="detail" required name="description"/>
+                    <textarea ng-model="detail" required name="description"/></textarea>
                       <span style="color:red" ng-show="addProject.description.$dirty && addProject.description.$invalid">
                         <span ng-show="addProject.description.$error.required">
                            Description is required.
                         </span>
                     </span>
                 </td>
+                          </tr>
+                          <tr>
                 <td>
-                    <input type="submit" ng-disabled="addProject.$invalid" value="Add" id="submitBtn" />
+
+                   <!--  <input type="submit" ng-disabled="addProject.$invalid" value="Add" id="submitBtn" /> -->       <button type="submit" ng-disabled="addProject.$invalid" value="Add" id="submitBtn">Add</button>
                 </td>
             </tr>
         </table>
@@ -141,9 +144,22 @@
         <h3>
             Search project
         </h3>
-        <input type="text" ng-model="search"/>
-        <select ng-model="filterstatus" ng-options="item.text for item in stats">
-        </select>
+        <table>
+        <tr>
+        <td>
+        Single name search  <input type="text" ng-model="search"/></td>
+        <td>Project Status  <select ng-model="filterstatus" ng-options="item.text for item in stats">
+        </select></td>
+        <td>Billing Type 
+        <select ng-model="filterbilltype" ng-options="item for item in billtypes">
+        </select></td>
+<!--         <td>Internal
+      <input type="checkbox" ng-model="internal"/></td> -->
+           <td>Vertical 
+        <select ng-model="filtervertical" ng-options="item for item in verticals">
+        </select></td>
+        </tr>
+      </table>
     </div>
     <div id="table">
         <h3>
@@ -174,7 +190,7 @@
                 </th>
             </tr>
             <!-- <tr ng-repeat= "item in projects track by $index"> -->
-                <tr ng-repeat= "item in projects |filter:search|filter:filterstatus.text track by $index">
+                <tr ng-repeat= "item in projects |filter:search|filter: { stat:filterstatus}|filter: { billtype:filterbilltype }|filter:{vertical:filtervertical} track by $index">
                     <td>
                         {{ item.project}}
                     </td>
