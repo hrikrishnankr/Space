@@ -1,22 +1,147 @@
-<h1>Request Vacation</h1>
-<div>
-	<div>
-		<span>No of vacation Remaining</span><span>0</span>
-		<span>No of loss of pay taken</span><span>0</span>
-	</div>
-	<form ng-controller="vacationController">
-		<div>
-			<label>No: of Days</label>
-			<input type="text" ng-model="noDays"/>
-		</div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</form>
+<div ng-controller="vacationController">
+        <div id="showAdd">
+            <h3>
+                Add Vacation
+            </h3>
+            <input type="button" id="addBtn" value="+"/>
+        </div>
+        <form ng-submit="submit()" name="addVacation" id="add" novalidate>
+            <h3>
+                Add Vacation
+            </h3>
+            <table>
+                <table>
+                    <tr>
+                        <td>
+                            No of Days
+                        </td>
+                        <td>
+                            <input type="text" ng-model="days"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            From
+                        </td>
+                        <td>
+                            <input type="date" ng-model="sdate"|date:'MM/dd/yyyy'/>
+                        </td>
+                        <td>
+                            Afternoon
+                  
+                            <input type="checkbox" ng-model="an"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            To
+                        </td>
+                        <td>
+                            <input type="date" ng-model="tdate"/>
+                        </td>
+                        <td>
+                            Forenoon
+                       
+                            <input type="checkbox" ng-model="fn"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Type of vacation
+                        </td>
+                        <td>
+                            <select ng-model="vacationtype" ng-options="item for item in vacationtypes">
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Sent Request To
+                        </td>
+                        <td>
+                            <select ng-model="approver" ng-options="item for item in approvers">
+                            </select>
+                        </td>
+                        <td>
+                        Enter the email addresses separated by a ","(comma). Do not re-enter approver email again.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Sent Copy To
+                        </td>
+                        <td>
+                            <input type="text" ng-model="copy"/>
+                        </td>
+                        <td>Request for vacation will be approved or rejected by your Manager depending on task deadlines and vacation days you have earned. Apply for vacation in advance so that it does not impact your project. 
+<br><br>
+Please read our <a href="https://sites.google.com/a/qburst.com/workplace/HR-Rules?pli=1#_Toc162145529">Vacation policy</a> in Workplace for more details.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Comment
+                        </td>
+                        <td>
+                            <textarea ng-model="comment">
+                            </textarea>
+                        </td>
+                    </tr>
+                    <td>
+                        <input type="submit" value="Send" id="submitBtn"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="table">
+            <h3>
+                My History
+            </h3>
+       <div id="filterByYear">
+            Filter by status
+            <select ng-model="search" ng-options="item for item in searchByYear">
+                            </select>
 </div>
-<h3>My History</h3>
-<div>
-	<table></table>
-</div>
+            <table>
+                <tr>
+                    <th>
+                        Date Range
+                    </th>
+                    <th>
+                        # of days
+                    </th>
+                    <th>
+                        Type of vacation
+                    </th>
+                    <th>
+                        Approver
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Remarks
+                    </th>
+                </tr>
+             
+                    <tr ng-repeat= "item in vacations |filter:search track by $index">
+                        <td>
+                            {{ item.sdate|date:'dd/MM/yyyy'}} - {{item.tdate|date:'dd/MM/yyyy'}}
+                        </td>
+                        <td>
+                            {{ item.days}}
+                        </td>
+                        <td>
+                            {{ item.vacationtype}}
+                        </td>
+                        <td>
+                            {{ item.approver}}
+                        </td>
+                        <td>
+                            {{ item.vacationstatus}}
+                        </td>
+                        <td>
+                            {{ item.comment}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>

@@ -7,7 +7,9 @@
 	<!--libraries -->
 	<script type="text/javascript" src="../lib/angular/angular.js"></script>
 	<script type="text/javascript" src="../lib/angular-route/angular-route.js"></script>
-	<script type="text/javascript" src="../lib/angular-resource/angular-resource.js"></script>	
+	<script type="text/javascript" src="../lib/angular-resource/angular-resource.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="../assets/javascripts/add.js"></script>	
 	
 	<!-- route file -->
 	<script type="text/javascript" src="../routes.js"></script>
@@ -18,6 +20,11 @@
 	<!--controllers-->
 	<script type="text/javascript" src="../controllers/menubarController.js"></script>
 	<script type="text/javascript" src="../controllers/vacationController.js"></script>
+	<script type="text/javascript" src="../controllers/dashboardController.js"></script>
+	<script type="text/javascript" src="../controllers/projectController.js"></script>
+
+	<!--directives -->
+	<script type="text/javascript" src="../directives/head.js"></script>
 	
 	<!-- style sheets-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -86,7 +93,7 @@
 			</a>
 		</div>
 	</aside>
-	<main>
+	<main id="content_area">
 		<div ng-view></div>
 	</main>
 	<footer></footer>

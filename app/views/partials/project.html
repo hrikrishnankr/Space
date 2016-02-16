@@ -1,0 +1,149 @@
+ <div>
+        <div id="showAdd">
+           <h3> Add project</h3>
+            <input type="button" id="addBtn" value="+"/>
+        </div>
+        <form ng-submit="submit()" name="addProject" id="add" novalidate>
+            <h3>Add project</h3>
+       
+             <table>
+                <tr>
+                    <td>
+                        Project
+                    </td>
+                    <td>
+                        <input type="text" ng-model="project" ng-required/>
+                      
+<span ng-show="addProject.project.$error.required">Project name is required.</span>
+
+                    </td>
+                    <td>
+                        Customer
+                    </td>
+                    <td>
+                        <input type="text" ng-model="customer" ng-required/>
+                    </td>
+                    <td>
+                        Project Manager
+                    </td>
+                    <td>
+                        <input type="text" ng-model="pm" ng-required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Billing Type
+                    </td>
+                    <td>
+                        <select ng-model="billtype" ng-options="item for item in billtypes" ng-required>
+                        </select>
+                    </td>
+                    <td>
+                        Start date
+                    </td>
+                    <td>
+                        <input type="date" ng-model="sdate" ng-required/>
+                    </td>
+                    <td>
+                        Technology
+                    </td>
+                    <td>
+                        <input type="text" ng-model="tech" ng-required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Status
+                    </td>
+                    <td>
+                        <select ng-model="stat" ng-options="item.text for item in stats" ng-required>
+                        </select>
+                    </td>
+                    <td>
+                        Vertical
+                    </td>
+                    <td>
+                        <select ng-model="vertical" ng-options="item for item in verticals" ng-required>
+                        </select>
+                    </td>
+                    <td>
+                        Project Category
+                    </td>
+                    <td>
+                        <select ng-model="category" ng-options="item for item in categories" ng-required>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Description
+                    </td>
+                    <td>
+                        <input type="text" ng-model="detail" ng-required/>
+                    </td>
+                    <td>
+                        <input type="submit" value="add" id="submitBtn" ng-disabled="addProject.project.$dirty && addProject.project.$invalid"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id="search">
+            <h3>Search project</h3>
+            <input type="text" ng-model="search"/>
+            <select ng-model="filterstatus" ng-options="item.text for item in stats">
+            </select>
+        </div>
+        <div id="table">
+         <h3>Projects</h3>
+            <table>
+                <tr>
+                    <th>
+                        Project
+                    </th>
+                    <th>
+                        Customer
+                    </th>
+                    <th>
+                        Project Manager
+                    </th>
+                    <th>
+                        Billing Type
+                    </th>
+                    <th>
+                        Start date
+                    </th>
+                    <th>
+                        Technology
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                </tr>
+            <!--     <tr ng-repeat= "item in projects track by $index"> -->
+                <tr ng-repeat= "item in projects |filter:search|filter:filterstatus.text track by $index"> 
+                        
+                        <td>
+                            {{ item.project}}
+                        </td>
+                        <td>
+                            {{ item.customer}}
+                        </td>
+                        <td>
+                            {{ item.pm}}
+                        </td>
+                        <td>
+                            {{ item.billtype}}
+                        </td>
+                        <td>
+                            {{ item.sdate | date:'MM/dd/yyyy'}}
+                        </td>
+                        <td>
+                            {{ item.tech}}
+                        </td>
+                        <td>
+                            {{ item.stat.text}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>

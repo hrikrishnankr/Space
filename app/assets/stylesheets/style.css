@@ -1,0 +1,37 @@
+table {
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #9fbed6;
+    color: black;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#showAdd,#search,#table,#filterByYear
+ {
+    border: 1px solid #d3d3d3;
+    padding: 15px;
+   
+}
+
+form {
+    border: 1px solid #d3d3d3;
+    padding: 15px;
+    display: none;
+
+}
+#filterByYear
+{
+    text-align: right;
+    border: none;
+}
+#content_area
+{
+    width: 1000px;
+}

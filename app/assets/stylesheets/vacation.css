@@ -1,0 +1,66 @@
+h1{
+	font-weight: normal;
+	font-size: 24px;
+}
+
+.field{
+	width: 99%;
+}
+
+.field .counts .count-1{
+	float:left;
+}
+
+.field .counts .count-2{
+	float: right;
+}
+
+.no_days, .from, .to{
+	display: inline-block;
+	width: 33%;
+}
+
+.no_days{
+	position: relative;
+	bottom: 39px;
+}
+
+.no_days input[type="text"], .from input[type="text"], .to input[type="text"]{
+	width: 90%;
+}
+
+.vacation_type, .send_to{
+	display: inline-block;
+	width: 49%;
+}
+
+.vacation_type select, .send_to select{
+	width: 97%;
+	height: 25px;
+}
+
+.send_copy_to input{
+	width: 47%;
+}
+
+textarea{
+	width: 47%;
+	height: 60px;
+}
+
+input{
+	height: 25px;
+}
+input:focus{
+	border: 1px solid #9ecaed;
+	outline: none;
+}
+
+input[type="submit"]{
+	color: white;
+	background: #0066A6;
+	border-style: none;
+	height: 25px;
+	width: 60px;
+}
+
