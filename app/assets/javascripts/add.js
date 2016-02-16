@@ -1,11 +1,12 @@
 $(document).ready(function() {
-    $("#add").hide();
     $(document).on("click","#addBtn",function() {
+$('#add').trigger("reset");
         $("#add").show();
         $("#showAdd").hide();
     });
     $(document).on("click","#submitBtn",function() {
-       	$("#add").hide();
+
+           		$("#add").hide();
       	$("#showAdd").show();
     });
 });

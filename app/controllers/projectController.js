@@ -19,7 +19,7 @@ spaceApp.controller("projectController", function($scope) {
 	               $scope.projects = (localStorage.getItem('projects')!==null) ? JSON.parse($scope.saved) :[]; 
                     $scope.verticals=["Airlines","Alternative Energy","Automotive Banking", "Financial Services & Insurance","Construction","Education","Energy", "Utilities", "Oil and Gas","Environment","Gaming","Government","Healthcare","IT Services","Job Portal","Legal","Logistics and Distribution","Manufacturing Media", "Advertising and Entertainment","Non-profit and Community Services","Pharma Professional Services","Realty","Retail","Sports","Technology","Telecom and ISP","Travel", "Hospitality and Leisure","eCommerce"];
                     $scope.categories=["Web app","Mobile","Big Data / ML / NLP","Testing","Website / CMS","Design",""];
-localStorage.clear();
+
                     $scope.submit = function () {
                     $scope.projects.push({
                     project: $scope.project,
@@ -34,6 +34,6 @@ localStorage.clear();
                     detail:$scope.detail
                     });
                     localStorage.setItem('projects', JSON.stringify($scope.projects));
-                    }
+                   }
 
                     });
