@@ -1,0 +1,15 @@
+[{
+	"dateRange" : "02/16/2016-05/16/2016",
+	"noDays" : "4",
+	"vacationType" : "Loss Of Pay",
+	"approver" : "Binu Dasappan",
+	"status" : "pending",
+	"remarks" : ""
+},{
+	"dateRange" : "01/16/2016-01/16/2016",
+	"noDays" : "4",
+	"vacationType" : "Compensatory",
+	"approver" : "Binu Dasappan",
+	"status" : "approved",
+	"remarks" : ""
+}]

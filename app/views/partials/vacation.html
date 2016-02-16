@@ -1,26 +1,27 @@
 <h1>Request Vacation</h1>
+<div  ng-controller="vacationController">
 <div class="field">
 	<div class="counts">
-		<span class="count-1">No of vacation Remaining <span>0</span></span>
-		<span class="count-2">No of loss of pay taken <span>0</span></span>
+		<span class="count-1">No of vacation Remaining <span>{{user[0]['paid_vacation']}}</span></span>
+		<span class="count-2">No of loss of pay taken <span>{{user[0]['loss_of_pay']}}</span></span>
 	</div>
 	<br><br>
-	<form ng-controller="vacationController" ng-submit="submit()">
+	<form ng-submit="submit()" name="vacationForm" novalidate>
 		<div class="no_days">
 			<div>No: of Days</div>
-			<input type="text" ng-model="noDays" name="noDays" />	
+			<input type="number" ng-model="noDays" name="noDays" required/>
 		</div>
 		<div class="from">
-			<div>Vacation From <span style="color:#666666;">[DD/MM/YYYY]</span></div>
+			<div>Vacation From</div>
 			<div>
-				<input type="text" ng-model="from" name="noDays" /><br>
+				<input type="date" ng-model="from" name="from" required /><br>
 				<span><input type="checkbox" ng-model="afternoon" name="afternoon">afternoon only</span>
 			</div>
 		</div>
 		<div class="to">
-			<div>To <span style="color:#666666;">[DD/MM/YYYY]</span></div>
+			<div>To</div>
 			<div>
-				<input type="text" ng-model="to" name="to"><br>
+				<input type="date" ng-model="to" name="to" required><br>
 				<span><input type="checkbox" ng-model="forenoon" name="forenoon">forenoon only</span>
 			</div>
 		</div>
@@ -28,7 +29,7 @@
 		<div class="vacation_type">
 			<div>Type of vacation</div>
 			<div>
-				<select ng-model="vacationType" name="vacationType">
+				<select ng-model="vacationType" name="vacationType" required>
 					<option value="1">Loss of Pay</option>
 					<option value="2">Compensatory</option>
 					<option value="3">Maternity</option>
@@ -39,8 +40,8 @@
 		<div class="send_to">
 			<div>Send Request To</div>
 			<div>
-				<select ng-model="sendTo" name="sendTo">
-					<option>----------</option>
+				<select ng-model="sendTo" name="sendTo" required>
+					<option ng-repeat="approver in approvers" value="{{approver.name}}">{{approver.name}}</option>
 				</select>
 			</div>
 		</div>
@@ -48,22 +49,42 @@
 		<div class="send_copy_to">
 			<span>
 				<div>Send Copy To</div>
-				<input ng-model="sendCopyTo" name="sendCopyTo"/>	
+				<input ng-model="sendCopyTo" name="sendCopyTo" placeholder="Emails seperated by ','(comma)" required/>	
 			</span>
 		</div>
 		<br><br>
 		<div class="comment">
 			<span>
 				<div>Comments</div>
-				<div><textarea name="comments"  ng-model="comments"></textarea></div>
+				<div><textarea name="comments"  ng-model="comments" placeholder="Comments" required></textarea></div>
 			</span>
 		</div>
 		<div>
-			<input type="submit" name="submit" id="submit" value="submit">
+			<input type="submit" name="submit" id="submit" value="submit" ng-disabled="vacationForm.noDays.$dirty && vacationForm.noDays.$invalid||vacationForm.from.$dirty && vacationForm.from.$invalid || vacationForm.to.$invalid&&vacationForm.to.$dirty||vacationForm.vacationType.$dirty && vacationForm.vacationType.$invalid"/>
 		</div>
 	</form>
 </div>
-<h3>My History</h3>
+<h2>My History</h2>
 <div>
-	<table></table>
+	<table>
+		<thead>
+			<th>Date Range</th>
+			<th># of Days</th>
+			<th>Type of vacation</th>
+			<th>Approver</th>
+			<th>Status</th>
+			<th>Remarks</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="vacation in vacations">
+				<td>{{vacation.dateRange}}</td>
+				<td>{{vacation.noDays}}</td>
+				<td>{{vacation.vacationType}}</td>
+				<td>{{vacation.approver}}</td>
+				<td>{{vacation.status}}</td>
+				<td>{{vacation.remarks}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 </div>
