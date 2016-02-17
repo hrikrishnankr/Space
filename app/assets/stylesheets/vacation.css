@@ -82,3 +82,9 @@ table thead th{
 	border-right: 1px solid #fff;	
 	color: #fff;
 }
+
+.filter{
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}

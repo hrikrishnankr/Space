@@ -1,3 +1,4 @@
+<notifications-bar class="notifications"></notifications-bar>
 <h1>Request Vacation</h1>
 <div  ng-controller="vacationController">
 <div class="field">
@@ -49,22 +50,28 @@
 		<div class="send_copy_to">
 			<span>
 				<div>Send Copy To</div>
-				<input ng-model="sendCopyTo" name="sendCopyTo" placeholder="Emails seperated by ','(comma)" required/>	
+				<input ng-model="sendCopyTo" name="sendCopyTo" placeholder="Emails seperated by ','(comma)"/>	
 			</span>
 		</div>
 		<br><br>
 		<div class="comment">
 			<span>
 				<div>Comments</div>
-				<div><textarea name="comments"  ng-model="comments" placeholder="Comments" required></textarea></div>
+				<div><textarea name="comments"  ng-model="comments" placeholder="Comments"></textarea></div>
 			</span>
 		</div>
 		<div>
-			<input type="submit" name="submit" id="submit" value="submit" ng-disabled="vacationForm.noDays.$dirty && vacationForm.noDays.$invalid||vacationForm.from.$dirty && vacationForm.from.$invalid || vacationForm.to.$invalid&&vacationForm.to.$dirty||vacationForm.vacationType.$dirty && vacationForm.vacationType.$invalid"/>
+			<input type="submit" name="submit" id="submit" value="submit"/>
 		</div>
 	</form>
 </div>
 <h2>My History</h2>
+<div class="filter">
+	<span>Filter By Year:</span>
+	<select ng-model="year" ng-change="">
+		<option value="{{y}}" ng-repeat="y in yearArray">{{y}}</option>
+	</select>
+</div>
 <div>
 	<table>
 		<thead>
@@ -76,8 +83,8 @@
 			<th>Remarks</th>
 		</thead>
 		<tbody>
-			<tr ng-repeat="vacation in vacations">
-				<td>{{vacation.dateRange}}</td>
+			<tr ng-repeat="vacation in vacations | yearFilter:year ">
+				<td>{{vacation.from | date:'MM/dd/yyyy'}}-{{vacation.to | date:'MM/dd/yyyy'}}</td>
 				<td>{{vacation.noDays}}</td>
 				<td>{{vacation.vacationType}}</td>
 				<td>{{vacation.approver}}</td>

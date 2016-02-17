@@ -1,4 +1,4 @@
-var spaceApp = angular.module('spaceApp', ['ngRoute','currentUserServices']);
+var spaceApp = angular.module('spaceApp', ['ngRoute','currentUserServices','ngNotificationsBar','yearFilters']);
 
 spaceApp.config(['$routeProvider',
   function($routeProvider) {
@@ -14,7 +14,7 @@ spaceApp.config(['$routeProvider',
    	when('/vacation',{
    		templateUrl : '../views/partials/vacation.html',
    		controller : 'vacationController',
-      css : '../assets/stylesheets/vacation.css'
+      css : ['../assets/stylesheets/vacation.css','../assets/stylesheets/ngNotificationsBar.css']
    	}).
    	otherwise({
    		redirectTo: '/dashboard'

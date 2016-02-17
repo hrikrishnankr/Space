@@ -91,13 +91,23 @@ aside div a:hover{
 	height: 51px;
 }
 
+.hide_color{
+	background: #fff;
+	color: black;
+}
+
 main {
 	float: left;
 	min-height: 536px;
-	min-width: 79%;
+	min-width: 80%;
 	margin-left: 10px;
 	border: 1px solid #c8caca;
 	padding-left: 20px;
+	margin-bottom: 10px;
+}
+
+main:hover{
+	box-shadow: 0 0 2px 2px #888;
 }
 
 footer{

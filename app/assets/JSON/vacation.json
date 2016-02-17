@@ -1,14 +1,16 @@
 [{
-	"dateRange" : "02/16/2016-05/16/2016",
+	"from" : "Wed Feb 17 2016 16:43:08 GMT+0530 (IST)",
+	"to" : "Wed Feb 17 2016 16:43:08 GMT+0530 (IST)",
 	"noDays" : "4",
-	"vacationType" : "Loss Of Pay",
+	"vacationType" : 1,
 	"approver" : "Binu Dasappan",
 	"status" : "pending",
 	"remarks" : ""
 },{
-	"dateRange" : "01/16/2016-01/16/2016",
+	"from": "Wed Feb 17 2015 16:43:08 GMT+0530 (IST)",
+	"to" : "Wed Feb 17 2015 16:43:08 GMT+0530 (IST)",
 	"noDays" : "4",
-	"vacationType" : "Compensatory",
+	"vacationType" : 2,
 	"approver" : "Binu Dasappan",
 	"status" : "approved",
 	"remarks" : ""
