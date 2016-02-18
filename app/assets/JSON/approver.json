@@ -1,16 +1,13 @@
 [{
 	"id" : "1",
 	"name" : "Prathapan Sethu",
-	"designation" : "CEO",
 	"email" : "prathapan@qburst.com"
 },{
 	"id" : "2",
 	"name" : "Binu Dasappan",
-	"designation" : "CTO",
 	"email" : "binu@qburst.com"
 },{
 	"id" : "3",
 	"name" : "Ansar Shahabudeen",
-	"designation" : "COO",
 	"email" : "ansar@qburst.com"
 }]
