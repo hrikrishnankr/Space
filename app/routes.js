@@ -1,4 +1,5 @@
-var spaceApp= angular.module('spaceApp', ['ngRoute','currentUserServices']);
+// var spaceApp= angular.module('spaceApp', ['ngRoute','currentUserServices']);
+var spaceApp= angular.module('spaceApp', ['ngRoute','currentUserServices','smart-table']);
 
 spaceApp.config(['$routeProvider',
   function($routeProvider) {
