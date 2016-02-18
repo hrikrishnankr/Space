@@ -1,9 +1,15 @@
 h1{
 	font-weight: bold;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
 }
 
 .field{
 	width: 99%;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
 }
 
 .field .counts .count-1{
@@ -44,6 +50,12 @@ h1{
 	width: 47%;
 }
 
+h2{
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
+}
+
 textarea{
 	width: 47%;
 	height: 60px;
@@ -69,6 +81,9 @@ table{
 	border-collapse: collapse;
 	width: 100%;
 	margin-bottom: 30px;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
 }
 
  table tbody tr td{
@@ -81,10 +96,14 @@ table thead th{
 	background: #0066a6;
 	border-right: 1px solid #fff;	
 	color: #fff;
+	padding-top: 4px;
 }
 
 .filter{
 	float: right;
 	margin-right: 10px;
 	margin-bottom: 10px;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
 }
