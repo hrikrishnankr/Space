@@ -1,6 +1,10 @@
-spaceApp.controller('menubarController',['$scope','User',function($scope,User){
+spaceApp.controller('menubarController',['$scope','jsonService',function($scope,jsonService){
 	var i=0
-	$scope.user = User.query()
+	
+	jsonService.fetchAllJson("currentUser").success(function(data) {
+    	$scope.user = data
+  	});
+
 	$scope.classArray = []
 	$scope.changeHover = function(index){
 		for(i=0;i<7;i++)

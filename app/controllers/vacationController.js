@@ -1,16 +1,20 @@
-spaceApp.controller('vacationController',['$scope','User','$http', 'notifications',function($scope,User,$http,notifications){
+spaceApp.controller('vacationController',['$scope','jsonService','$http', 'notifications',function($scope,jsonService,$http,notifications){
 	var err=0,msg="",date;
 	date = new Date().getFullYear();
-	$scope.user = User.query()
+	
+	jsonService.fetchAllJson("currentUser").success(function(data) {
+    	$scope.user = data
+  	});
+	
 	$scope.vacations = []
 	$scope.yearArray = [date,date-1,date-2,date-3,date-4,date-5,date-6,date-7]
 	var vacationType =["Loss of Pay","Compensatory","Maternity","Paternity"];
 	
-	$http.get('../assets/JSON/approver.json').success(function(data) {
+    jsonService.fetchAllJson("approver").success(function(data) {
     	$scope.approvers = data;
-    });
+  	});
 
-	$http.get('../assets/JSON/vacation.json').success(function(data) {
+	jsonService.fetchAllJson("vacation").success(function(data) {
     	angular.forEach(data, function(value, key){
     		$scope.vacations.push({
     			"from" : new Date(value.from),

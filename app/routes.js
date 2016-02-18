@@ -1,4 +1,4 @@
-var spaceApp = angular.module('spaceApp', ['ngRoute','currentUserServices','ngNotificationsBar','yearFilters']);
+var spaceApp = angular.module('spaceApp', ['ngRoute','ngNotificationsBar','yearFilters']);
 
 spaceApp.config(['$routeProvider',
   function($routeProvider) {
