@@ -146,137 +146,82 @@
             </tr>
         </table>
     </form>
-    <div id="search">
-        <h3>
-            Search project
-        </h3>
-        <table>
-            <tr>
-                <td>
-                    Single name search
-                    <input type="text" ng-model="search"/>
-                </td>
-                <td>
-                    Project Status
-                    <select ng-model="filterstatus" ng-options="item for item in status_options">
-                    </select>
-                </td>
-                <td>
-                    Billing Type
-                    <select ng-model="filterbilltype" ng-options="item for item in bill_type_options">
-                    </select>
-                </td>
-                <!--
-                    <td>
-                        Internal
-                        <input type="checkbox" ng-model="internal"/>
-                    </td>
-                -->
-                <td>
-                    Vertical
-                    <select ng-model="filtervertical" ng-options="item for item in vertical_options">
-                    </select>
-                </td>
-            </tr>
-        </table>
-    </div>
     <div id="table">
         <h3>
             Projects
         </h3>
-        <!--
-            <table>
-                <tr>
-                    <th>
-                        Project
-                    </th>
-                    <th>
-                        Customer
-                    </th>
-                    <th>
-                        Project Manager
-                    </th>
-                    <th>
-                        Billing Type
-                    </th>
-                    <th>
-                        Start date
-                    </th>
-                    <th>
-                        Technology
-                    </th>
-                    <th>
-                        Status
-                    </th>
-                </tr>
-                <tr ng-repeat= "item in projects |filter:search|filter: { stat:filterstatus}|filter: { billtype:filterbilltype }|filter:{vertical:filtervertical} track by $index">
-                    <td>
-                        {{ item.project}}
-                    </td>
-                    <td>
-                        {{ item.customer}}
-                    </td>
-                    <td>
-                        {{ item.pm}}
-                    </td>
-                    <td>
-                        {{ item.billtype}}
-                    </td>
-                    <td>
-                        {{ item.sdate | date:'MM/dd/yyyy'}}
-                    </td>
-                    <td>
-                        {{ item.tech}}
-                    </td>
-                    <td>
-                        {{ item.stat}}
-                    </td>
-                </tr>
-            </table>
-        -->
+        <table st-table="projects">
+            <tr>
+                <td>
+                    <b>
+                        Project Name
+                    </b>
+                </td>
+                <td>
+                    <input st-search="project" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+                </td>
+                <td>
+                    <b>
+                        Bill Type
+                    </b>
+                </td>
+                <td>
+                    <select st-search="billtype">
+                        <option value="">
+                            All
+                        </option>
+                        <option ng-repeat="bill_type in bill_type_options" value="{{bill_type}}">
+                            {{bill_type}}
+                        </option>
+                    </select>
+                </td>
+                <td>
+                    <b>
+                        Project Status
+                    </b>
+                </td>
+                <td>
+                    <select st-search="stat">
+                        <option value="">
+                            All
+                        </option>
+                        <option ng-repeat="status in status_options" value="{{status}}">
+                            {{status}}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+        </table>
         <table st-table="projects" class="table">
             <thead>
                 <tr>
                     <th st-sort="project">
-                   Project
+                        Project
                     </th>
                     <th st-sort="customer">
-                       Customer
+                        Customer
                     </th>
                     <th st-sort="pm">
-                       Project Manager
+                        Project Manager
                     </th>
                     <th st-sort="billtype">
-                       Bill type
+                        Bill type
                     </th>
-                          <th st-sort="sdate">
-                       Start Date
+                    <th st-sort="sdate">
+                        Start Date
                     </th>
                     <th st-sort="tech">
-                       Technology
+                        Technology
                     </th>
                     <th st-sort="stat">
                         Project Status
                     </th>
                 </tr>
             </thead>
-            <tr>
-    
-            <th>
-            <input st-search="project" placeholder="search for firstname" class="input-sm form-control" type="search"/>
-        </th>
-      <!--   <th>
-                <select st-search="billtype">
-                    <option value="">All</option>
-                    <option ng-repeat="row in projects | unique:'billtype'" value="{{row.billtype}}">{{row.billtype}}</option>
-                </select>
-            </th>
-     -->
-            </tr>
             <tbody>
                 <tr ng-repeat="row in projects track by $index">
                     <td>
-                        {{row.project | uppercase}}
+                        {{row.project}}
                     </td>
                     <td>
                         {{row.customer}}

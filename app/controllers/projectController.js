@@ -30,22 +30,3 @@ spaceApp.controller("projectController", function($scope, $http) {
         localStorage.setItem('projects', JSON.stringify($scope.projects));
     }
 });
-// spaceApp.filter('myStrictFilter', function($filter) {
-//     return function(input, predicate) {
-//         return $filter('filter')(input, predicate, true);
-//     }
-// });
-// spaceApp.filter('unique', function() {
-//     return function(arr, field) {
-//         var o = {},
-//             i, l = arr.length,
-//             r = [];
-//         for (i = 0; i < l; i += 1) {
-//             o[arr[i][field]] = arr[i];
-//         }
-//         for (i in o) {
-//             r.push(o[i]);
-//         }
-//         return r;
-//     };
-// });
