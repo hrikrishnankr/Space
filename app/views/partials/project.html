@@ -12,7 +12,7 @@
         <h3>
             Add project
         </h3>
-        <table>
+        <table class="table" id="addNewProject">
             <tr>
                 <td>
                     Project
@@ -138,7 +138,7 @@
             </tr>
             <tr>
                 <td>
-                    <!-- <input type="submit" ng-disabled="addProject.$invalid" value="Add" id="submitBtn" /> -->
+             
                     <button type="submit" ng-disabled="addProject.$invalid" value="Add" id="submitBtn" ng-click="showHide()">
                         Add
                     </button>
@@ -150,7 +150,7 @@
         <h3>
             Projects
         </h3>
-        <table st-table="projects">
+        <table st-table="projects" class="table table-striped">
             <tr>
                 <td>
                     <b>
@@ -220,14 +220,15 @@
             </thead>
             <tbody>
                 <tr ng-repeat="row in projects track by $index">
+                
                     <td>
-                        {{row.project}}
+                        <a ng-href="#">{{row.project}}</a>
                     </td>
                     <td>
-                        {{row.customer}}
+                         <a ng-href="#">{{row.customer}}</a>
                     </td>
                     <td>
-                        {{row.pm }}
+                         <a ng-href="#">{{row.pm }}</a>
                     </td>
                     <td>
                         {{row.billtype }}

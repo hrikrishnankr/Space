@@ -5,17 +5,16 @@ spaceApp.controller("projectController", function($scope, $http) {
         $scope.vertical_options = $scope.details.verticals;
         $scope.bill_type_options = $scope.details.billtypes;
         $scope.category_options = $scope.details.categories;
-        console.log($scope.status_options);
     });
-
     $scope.saved = localStorage.getItem('projects');
     $scope.projects = (localStorage.getItem('projects') !== null) ? JSON.parse($scope.saved) : [];
     $scope.showHide = function() {
         $scope.display = !$scope.display;
-        console.log($scope.display);
     }
     $scope.submit = function() {
+        $scope.index = $scope.projects.length;
         $scope.projects.push({
+            id: $scope.index,
             project: $scope.project,
             customer: $scope.customer,
             pm: $scope.pm,

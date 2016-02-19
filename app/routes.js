@@ -1,4 +1,4 @@
-// var spaceApp= angular.module('spaceApp', ['ngRoute','currentUserServices']);
+
 var spaceApp= angular.module('spaceApp', ['ngRoute','currentUserServices','smart-table']);
 
 spaceApp.config(['$routeProvider',
@@ -17,6 +17,7 @@ spaceApp.config(['$routeProvider',
    		controller : 'vacationController',
        css : '../assets/stylesheets/style.css'
    	}).
+ 
    	otherwise({
    		redirectTo: '/dashboard'
    	})
