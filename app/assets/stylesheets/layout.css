@@ -19,7 +19,7 @@ header .logo {
 }
 
 .logout, .hamburger {
-	height: 70px;
+	height: 55px;
 	width: 40px;
 	text-align: center;
 	margin-top: 20px;
@@ -37,33 +37,38 @@ header .logo {
 
 aside {
 	float: left;
-	height: 500px;
-	border-right: 1px solid #cacaca;
+	height: 605px;
 	width: 15%;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
 }
 
 aside div {
-	display: block;
 	width: 100%;
-	height: 60px;
+	height: 50px;
+	margin-bottom: 25px;
 	font-size: 18px;
 	cursor: pointer;
-	margin-left: 20px;
 }
-
 aside div a{
 	text-decoration: none;
 	color: #000;
+	display: block;
+	padding-left: 20px;
+	padding-top: 25px;
 }
 
 aside .profile_pic {
 	margin-top: 7px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	background: #fff;
 }
 
 aside .profile_pic img{
 	height: 50px;
 	width: 50px;
+	border-radius: 25px;
 	vertical-align: middle;
 	margin-top: 8px;
 }
@@ -72,10 +77,55 @@ aside .profile_pic span{
 	font-size: 16px;
 }
 
+aside .profile_pic:hover{
+	background: #fff;
+	color: #000;
+}
+
+aside div a:hover{
+	display: block;
+	color: white;
+	height: 51px;
+	animation-name: changeColor;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes changeColor {
+    from {
+    	background-color: #fff;
+    	color: #000;
+    }
+    to {
+    	background: #0066A6;
+    	color: #fff;
+    }
+}
+
+.show_color{
+	background: #0066A6;
+	color: white;
+	height: 51px;
+}
+
+.hide_color{
+	background: #fff;
+	color: black;
+	height: 51px;
+}
+
 main {
 	float: left;
-	min-height: 543px;
-	max-width: 85%;
+	min-height: 596px;
+	min-width: 80%;
+	margin-left: 10px;
+	border: 1px solid #c8caca;
+	padding-left: 20px;
+	margin-bottom: 10px;
+}
+
+main:hover{
+	box-shadow: 0 0 2px 2px #888;
 }
 
 footer{

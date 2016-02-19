@@ -2,6 +2,8 @@
 	{
 		"name" : "Hari",
 		"emp_id" : "qb2015/12/3",
-		"profile_pic" : "../assets/images/user.png"
+		"profile_pic" : "../assets/images/user.png",
+		"paid_vacation" : "3",
+		"loss_of_pay" : "2"
 	}
 ]

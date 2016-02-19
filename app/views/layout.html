@@ -4,24 +4,38 @@
 	<meta charset="UTF-8">
 	<title>Space</title>
 	
+	<!--fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
 	<!--libraries -->
 	<script type="text/javascript" src="../lib/angular/angular.js"></script>
 	<script type="text/javascript" src="../lib/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="../lib/angular-resource/angular-resource.js"></script>	
-	
+	<script src="../assets/javascripts/ngNotificationsBar.js"></script>
+
 	<!-- route file -->
 	<script type="text/javascript" src="../routes.js"></script>
 	
 	<!-- services -->
-	<script type="text/javascript" src="../services/currentUserService.js"></script>
+	<script type="text/javascript" src="../services/JSONService.js"></script>
+
+	<!--filters-->
+	<script type="text/javascript" src="../filters/yearFilter.js"></script>
 
 	<!--controllers-->
 	<script type="text/javascript" src="../controllers/menubarController.js"></script>
 	<script type="text/javascript" src="../controllers/vacationController.js"></script>
+	<script type="text/javascript" src="../controllers/dashboardController.js"></script>
+	<script type="text/javascript" src="../controllers/projectListController.js"></script>
+
+	<!--directives -->
+	<script type="text/javascript" src="../directives/head.js"></script>
 	
 	<!-- style sheets-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../assets/stylesheets/layout.css">
+
+	<!-- Javascripts-->
 </head>
 <body>
 	<header>
@@ -43,51 +57,51 @@
 			<img ng-src="{{user[0]['profile_pic']}}"> 
 			<span>{{user[0]['name']}}</span> 
 		</div>
-		<div class="dashboard">
-			<a href="#dashboard">
+		<div class="dashboard" ng-click="changeHover(0)">
+			<a href="#dashboard" ng-class="classArray[0]">
 				<i class="fa fa-home"></i>
 				<span>Dashboard</span>
 			</a>
 		</div>
-		<div class="employees">
-			<a href="#">
+		<div class="employees" ng-click="changeHover(1)">
+			<a href="#" ng-class="classArray[1]">
 				<i class="fa fa-user"></i>
 				<span>Employees</span>
 			</a>
 		</div>
-		<div class="projects">
-			<a href="#projects">
+		<div class="projects" ng-click="changeHover(2)">
+			<a href="#projects" ng-class="classArray[2]">
 				<i class="fa fa-briefcase"></i>
 				<span>Projects</span>
 			</a>
 		</div>
-		<div class="customers">
-			<a href="#">
+		<div class="customers" ng-click="changeHover(3)">
+			<a href="#" ng-class="classArray[3]">
 				<i class="fa fa-users"></i>
 				<span>Customers</span>
 			</a>
 		</div>
-		<div class="status_report">
-			<a href="#">
+		<div class="status_report" ng-click="changeHover(4)">
+			<a href="#" ng-class="classArray[4]">
 				<i class="fa fa-file-text"></i>
 				<span>Status Report</span>
 			</a>
 		</div>
-		<div class="vacation">
-			<a href="#vacation">
+		<div class="vacation" ng-click="changeHover(5)">
+			<a href="#vacation" ng-class="classArray[5]">
 				<i class="fa fa-plane"></i>
 				<span>Vacation</span>
 			</a>
 		</div>
-		<div class="todo">
-			<a href="#">
+		<div class="todo" ng-click="changeHover(6)">
+			<a href="#" ng-class="classArray[6]">
 				<i class="fa fa-list"></i>
 				<span>Todo</span>
 			</a>
 		</div>
 	</aside>
 	<main>
-		<div ng-view></div>
+	   	<div ng-view></div>
 	</main>
 	<footer></footer>
 </body>
