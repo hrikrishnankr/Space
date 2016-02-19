@@ -30,8 +30,14 @@ spaceApp.controller('vacationController',['$scope','jsonService','$http', 'notif
 	
 	$scope.submit = function() {
 		msg=""
+		var oneDay = 24*60*60*1000
+		var firstDate = new Date($scope.from)
+		var secondDate = new Date($scope.to)
+		var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)))
+
 		if($scope.from&&$scope.to&&$scope.noDays&&$scope.sendTo){
-			$scope.vacations.push({
+			if(diffDays == $scope.noDays){
+				$scope.vacations.push({
 								"from" : $scope.from,
 								"to" : $scope.to,
 								"noDays" : $scope.noDays,
@@ -40,27 +46,29 @@ spaceApp.controller('vacationController',['$scope','jsonService','$http', 'notif
 								"status" : "pending",
 								"remarks" : ""
 							});
-			notifications.showSuccess({message: 'Request has been sent'});
-
-			//code to send the data to the back end 
-
+				notifications.showSuccess({message: 'Request has been sent'});
+				//code to send the data to the back end 
+			}
+			else{
+				notifications.showError({ message: "Date difference does'nt match"});
+			}
 		}
 		if(!$scope.noDays){
-			msg="No: days cannot be null -";
+			msg="No: days cannot be null";
 			err=1;
 		}
 
-		if(!$scope.from){
-			msg+="From date cannot be null -";
+		else if(!$scope.from){
+			msg+="From date cannot be null";
 			err=1;
 		}
 
-		if(!$scope.to){
-			msg+="To date cannot be null -";
+		else if(!$scope.to){
+			msg+="To date cannot be null";
 			err=1;
 		}
 
-		if(!$scope.sendTo){
+		else if(!$scope.sendTo){
 			msg+="send request to field cannot be null"
 			err=1;
 		}

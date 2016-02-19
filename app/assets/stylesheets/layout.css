@@ -106,20 +106,6 @@ aside div a:hover{
 	background: #0066A6;
 	color: white;
 	height: 51px;
-	animation-name: onShowColor;
-    animation-duration: 550ms;
-    animation-fill-mode: forwards;
-}
-
-@keyframes onShowColor {
-    from {
-    	background-color: #fff;
-    	color: #000;
-    }
-    to {
-    	background: #0066A6;
-    	color: #fff;
-    }
 }
 
 .hide_color{
