@@ -107,3 +107,20 @@ table thead th{
 	font-style: normal;
 	font-variant: normal;
 }
+
+@media only screen and (max-width: 830px) {
+	.from, .to{
+		display: block;
+		width: 100%;
+		margin-top: 10px;
+	}
+
+	.no_days{
+		position: relative;
+		bottom: 5px;
+		width: 100%;
+	}
+	.no_days input[type="number"]{
+		width: 90%;
+	}
+}

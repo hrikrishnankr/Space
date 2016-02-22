@@ -35,17 +35,19 @@ spaceApp.controller('vacationController',['$scope','jsonService','$http', 'notif
 		var secondDate = new Date($scope.to)
 		var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)))
 
+		var data = {
+					"from" : $scope.from,
+					"to" : $scope.to,
+					"noDays" : $scope.noDays,
+					"vacationType" : vacationType[$scope.vacationType-1],
+					"approver" : $scope.sendTo,
+					"status" : "pending",
+					"remarks" : ""
+				}
+
 		if($scope.from&&$scope.to&&$scope.noDays&&$scope.sendTo){
-			if(diffDays == $scope.noDays){
-				$scope.vacations.push({
-								"from" : $scope.from,
-								"to" : $scope.to,
-								"noDays" : $scope.noDays,
-								"vacationType" : vacationType[$scope.vacationType-1],
-								"approver" : $scope.sendTo,
-								"status" : "pending",
-								"remarks" : ""
-							});
+			if(diffDays == $scope.noDays && $scope.noDays>0 && $scope.isUnique(data)){
+				$scope.vacations.push(data);
 				notifications.showSuccess({message: 'Request has been sent'});
 				//code to send the data to the back end 
 			}
@@ -79,4 +81,17 @@ spaceApp.controller('vacationController',['$scope','jsonService','$http', 'notif
 			msfg=""
 		}
 	};
+
+	$scope.isUnique = function(object){
+		var flag = 0
+		angular.forEach($scope.vacations, function(value, key){
+			if(object.from == value.from && object.to == value.to)
+				flag = 1
+		});
+		if(flag==1)
+			return false
+		else
+			return true
+	};
+	
 }]);
