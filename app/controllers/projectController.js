@@ -1,5 +1,5 @@
-spaceApp.controller("projectController", function($scope, $http,jsonService,localstorageService) {
-     $scope.details = [];
+spaceApp.controller('projectController', function($scope, $http, jsonService, localstorageService) {
+    $scope.details = [];
     var fetch = jsonService.fetchAllJson("project");
     fetch.success(function(data) {
         $scope.details = data;
@@ -8,17 +8,13 @@ spaceApp.controller("projectController", function($scope, $http,jsonService,loca
         $scope.bill_type_options = $scope.details.billtypes;
         $scope.category_options = $scope.details.categories;
     });
-     $scope.saved =  localstorageService.get('projects',[]);
-   $scope.projects = (localstorageService.getObject('projects') !== null) ? JSON.parse($scope.saved) : [];
+    $scope.saved = localstorageService.get('projects');
+    $scope.projects = !!$scope.saved ? localstorageService.getObject('projects') : [];
     $scope.showHide = function() {
         $scope.display = !$scope.display;
     }
-
-         $scope.index = $scope.projects.length;
- 
-
+    $scope.index = $scope.projects.length;
     $scope.submit = function() {
-   
         $scope.projects.push({
             id: $scope.index,
             project: $scope.project,
@@ -32,6 +28,8 @@ spaceApp.controller("projectController", function($scope, $http,jsonService,loca
             category: $scope.category,
             detail: $scope.detail
         });
-        localstorageService.set('projects',JSON.stringify($scope.projects));
+        // localStorage.setItem('projects', JSON.stringify($scope.projects));
+        localstorageService.setObject('projects', $scope.projects);
+        // localstorageService.set('projects',JSON.stringify($scope.projects));
     }
 });
