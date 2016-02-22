@@ -222,7 +222,8 @@
                 <tr ng-repeat="row in projects track by $index">
                 
                     <td>
-                        <a ng-href="#">{{row.project}}</a>
+
+                        <a ng-href="#/projects/{{row.id}}">{{row.project}}</a>
                     </td>
                     <td>
                          <a ng-href="#">{{row.customer}}</a>

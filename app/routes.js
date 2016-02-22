@@ -1,24 +1,28 @@
-
-var spaceApp= angular.module('spaceApp', ['ngRoute','currentUserServices','smart-table']);
-
+var spaceApp = angular.module('spaceApp', ['ngRoute', 'currentUserServices', 'smart-table']);
 spaceApp.config(['$routeProvider',
-  function($routeProvider) {
-   	$routeProvider.
-   	when('/dashboard', {
-   		templateUrl : '../views/partials/dashboard.html'
-   	}).
-   	when('/projects',{
-   		 templateUrl : '../views/partials/project.html',
-        controller : 'projectController',
-        css : '../assets/stylesheets/style.css'
-   	}).
-   	when('/vacation',{
-   		templateUrl : '../views/partials/vacation.html',
-   		controller : 'vacationController',
-       css : '../assets/stylesheets/style.css'
-   	}).
- 
-   	otherwise({
-   		redirectTo: '/dashboard'
-   	})
-  }]);
+    function($routeProvider) {
+        $routeProvider.
+        when('/dashboard', {
+            templateUrl: '../views/partials/dashboard.html'
+        }).
+        when('/projects', {
+            templateUrl: '../views/partials/project.html',
+            controller: 'projectController',
+            css: '../assets/stylesheets/style.css'
+        }).
+        when('/vacation', {
+            templateUrl: '../views/partials/vacation.html',
+            controller: 'vacationController',
+            css: '../assets/stylesheets/style.css'
+        }).
+        when('/projects/:id', {
+            templateUrl: '../views/partials/projectDetailed.html',
+            controller: 'projectListController',
+             css: '../assets/stylesheets/style.css'
+        })
+         .
+        otherwise({
+            redirectTo: '/index.html'
+        })
+    }
+]);

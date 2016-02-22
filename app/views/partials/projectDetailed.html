@@ -1,41 +1,69 @@
-<div id="table">
-        <h3>
-        {{project_name}}
-        </h3>
-        <table>
-            <tr>
-             <td>Customer</td>
-                    <td>
-                        {{customer_name}}
-                    </td>
-                    </tr>
-                    <tr>
-                                <td>Vertical</td>
-                    <td>
-                        {{vertical}}
-                    </td>
-                   
-                           <td>Project Category</td>
-                    <td>
-                        {{ category}}
-                    </td>
-                           <td>Project Status</td>
-                    <td>
-                        {{ stat}}
-                    </td>
-                    </tr>
-                    <tr>
-                    <td>Technology</td>
-                    <td>
-                        {{tech}}
-                    </td>
-                    </tr>
-                    <tr>
-                    <td>Description</td>
-                    <td>
-                        {{ detail}}
-                    </td>
-                   
-                </tr>
-            </table>
-        </div>
+<div id="content_area">
+    <div id="project_title">
+    <h2>
+        {{details.project}}
+    </h2>
+    </div>
+    <table class="table">
+        <tr>
+            <td>
+                Customer
+            </td>
+            <td>
+                <b>
+                    {{details.customer}}
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Vertical
+            </td>
+            <td>
+                <b>
+                    {{details.vertical}}
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Project Category
+            </td>
+            <td>
+                <b>
+                    {{details.category}}
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Project Status
+            </td>
+            <td>
+                <b>
+                    {{details.stat}}
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Technology
+            </td>
+            <td>
+                <b>
+                    {{details.tech}}
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Description
+            </td>
+            <td>
+                <b>
+                    {{details.detail}}
+                </b>
+            </td>
+        </tr>
+    </table>
+</div>

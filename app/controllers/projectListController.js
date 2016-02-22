@@ -1,5 +1,8 @@
-spaceApp.controller("projectListController", function($scope, Page, Model, $routeParams, $location) {
-    Page.setTitle("Detail");
-    var id = $scope.id = $routeParams.id;
-    $scope.item = Model.get(id);
-}
+spaceApp.controller('projectListController', ['$routeParams', '$scope', 'localstorageService' ,function($routeParams,$scope,localstorageService) {
+   var id = $routeParams.id;
+ console.log(id);
+ var local=  localstorageService.getObject('projects');
+   $scope.details =_.find(local, function(item) {
+    return item.id ==$routeParams.id; 
+});
+}]);
