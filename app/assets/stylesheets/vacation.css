@@ -1,0 +1,109 @@
+h1{
+	font-weight: bold;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
+}
+
+.field{
+	width: 99%;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
+}
+
+.field .counts .count-1{
+	float:left;
+	font-weight: bold;
+}
+
+.field .counts .count-2{
+	float: right;
+	font-weight: bold;	
+}
+
+.no_days, .from, .to{
+	display: inline-block;
+	width: 33%;
+}
+
+.no_days{
+	position: relative;
+	bottom: 39px;
+}
+
+.no_days input[type="text"], .from input[type="date"], .to input[type="date"]{
+	width: 90%;
+}
+
+.vacation_type, .send_to{
+	display: inline-block;
+	width: 49%;
+}
+
+.vacation_type select, .send_to select{
+	width: 97%;
+	height: 25px;
+}
+
+.send_copy_to input{
+	width: 47%;
+}
+
+h2{
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
+}
+
+textarea{
+	width: 47%;
+	height: 60px;
+}
+
+input{
+	height: 25px;
+}
+input:focus, textarea:focus, select:focus{
+	border: 1px solid rgba(81, 203, 238, 1);
+	outline: none;
+}
+
+input[type="submit"]{
+	color: white;
+	background: #0066A6;
+	border-style: none;
+	height: 25px;
+	width: 60px;
+}
+
+table{
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 30px;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
+}
+
+ table tbody tr td{
+	border-bottom: 1px solid #0066A6;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+table thead th{
+	background: #0066a6;
+	border-right: 1px solid #fff;	
+	color: #fff;
+	padding-top: 4px;
+}
+
+.filter{
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
+}

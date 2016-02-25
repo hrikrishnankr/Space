@@ -1,0 +1,139 @@
+body{
+	margin: 0px;
+}
+
+header{
+	width: 100%;
+	height: 70px;
+	background: #2C3742;
+}
+
+header .logo {
+	height: 70px;
+	display: inline-block;
+	margin: 8px;
+}
+
+.pull_right {
+	float:right;
+}
+
+.logout, .hamburger {
+	height: 55px;
+	width: 40px;
+	text-align: center;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+.logout a, .hamburger a{
+	margin-top: 20px;
+}
+
+.logout a i, .hamburger a i{
+	font-size: 24px;
+	color: #fff;
+}
+
+aside {
+	float: left;
+	height: 605px;
+	width: 15%;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
+}
+
+aside div {
+	width: 100%;
+	height: 50px;
+	margin-bottom: 25px;
+	font-size: 18px;
+	cursor: pointer;
+}
+aside div a{
+	text-decoration: none;
+	color: #000;
+	display: block;
+	padding-left: 20px;
+	padding-top: 25px;
+}
+
+aside .profile_pic {
+	margin-top: 7px;
+	margin-bottom: 20px;
+	background: #fff;
+}
+
+aside .profile_pic img{
+	height: 50px;
+	width: 50px;
+	border-radius: 25px;
+	vertical-align: middle;
+	margin-top: 8px;
+}
+
+aside .profile_pic span{
+	font-size: 16px;
+}
+
+aside .profile_pic:hover{
+	background: #fff;
+	color: #000;
+}
+
+aside div a:hover{
+	display: block;
+	color: white;
+	height: 51px;
+	animation-name: changeColor;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes changeColor {
+    from {
+    	background-color: #fff;
+    	color: #000;
+    }
+    to {
+    	background: #0066A6;
+    	color: #fff;
+    }
+}
+
+.show_color{
+	background: #0066A6;
+	color: white;
+	height: 51px;
+}
+
+.hide_color{
+	background: #fff;
+	color: black;
+	height: 51px;
+}
+
+main {
+	float: left;
+	min-height: 596px;
+	min-width: 80%;
+	margin-left: 10px;
+	border: 1px solid #c8caca;
+	padding-left: 20px;
+	margin-bottom: 10px;
+	font-family: 'Josefin Sans';
+	font-style: normal;
+	font-variant: normal;
+}
+
+main:hover{
+	box-shadow: 0 0 2px 2px #888;
+}
+
+footer{
+	clear: both;
+	width: 100%;
+	height: 70px;
+	background:  #2C3742;
+}

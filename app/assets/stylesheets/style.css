@@ -1,0 +1,80 @@
+table {
+  border-collapse: collapse;
+  width: 100%;  
+}
+
+th {
+    background-color: #9fbed6;
+    color: black;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#showAdd,#search,#table,#filterByYear{
+ padding: 15px;  
+}
+
+form {
+    border: 1px solid #d3d3d3;
+    padding: 15px;
+    width: 1000px;
+       
+}
+#filterByYear
+{
+    text-align: right;
+    border: none;
+}
+#content_area
+{
+    width: 1000px;
+}
+#addNewProject td
+{
+    padding: 15px;
+}
+#project_title{
+      padding-bottom: 15px;  
+}
+
+.ng-enter, .ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+
+.ng-enter {
+  opacity: 0;
+  -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  -moz-transform:scale3d(0.5, 0.5, 0.5);
+  transform:scale3d(0.5, 0.5, 0.5);
+}
+
+.ng-enter-active {
+  opacity: 1;
+  -webkit-transform:scale3d(1, 1, 1);
+  -moz-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
+}
+
+.ng-leave {
+  opacity: 1; 
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
+
+.ng-leave-active {
+  opacity: 0;
+  -webkit-transform:translate3d(100px, 0, 0);
+  -moz-transform:translate3d(100px, 0, 0);
+  transform:translate3d(100px, 0, 0);
+}
