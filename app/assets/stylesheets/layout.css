@@ -122,6 +122,10 @@ main {
 	border: 1px solid #c8caca;
 	padding-left: 20px;
 	margin-bottom: 10px;
+	font-family: 'Josefin Sans';
+		font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
 }
 
 main:hover{

@@ -16,7 +16,7 @@ th, td {
 
 #showAdd,#search,#table,#filterByYear
  {
-    border: 1px solid #d3d3d3;
+ 
     padding: 15px;
    
 }
@@ -25,6 +25,7 @@ form {
     border: 1px solid #d3d3d3;
     padding: 15px;
     width: 1000px;
+       
 }
 #filterByYear
 {

@@ -12,7 +12,6 @@ spaceApp.controller('projectListController', function($scope, $http, jsonService
     $scope.projects = !!$scope.saved ? localstorageService.getObject('projects') : [];
     $scope.showHide = function() {
         $scope.display = !$scope.display;
-        console.log("error");
     }
     $scope.index = $scope.projects.length;
     $scope.submit = function() {
