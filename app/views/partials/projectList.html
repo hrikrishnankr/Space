@@ -1,1 +1,250 @@
-<h1>Projects</h1>
+<div>
+    <div id="showAdd" ng-init="display =true" ng-show="display">
+        <h3>
+            Add project
+        </h3>
+        <button id="addBtn" ng-click="showHide()">
+            <i class="fa fa-plus">
+            </i>
+        </button>
+    </div>
+    <form ng-submit="submit()" name="addProject" id="add" novalidate ng-show="!display">
+        <h3>
+            Add project
+        </h3>
+        <table class="table" id="addNewProject">
+            <tr>
+                <td>
+                    Project
+                </td>
+                <td>
+                    <input type="text" required ng-model="project" name="project_name"/>
+                    <span style="color:red" ng-show="addProject.project_name.$dirty && addProject.project_name.$invalid">
+                        <span ng-show="addProject.project_name.$error.required">
+                            Project is required.
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    Customer
+                </td>
+                <td>
+                    <input type="text" ng-model="customer" name="customer_name"required/>
+                    <span style="color:red" ng-show="addProject.customer_name.$dirty && addProject.customer_name.$invalid">
+                        <span ng-show="addProject.customer_name.$error.required">
+                            Customer is required.
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    Project Manager
+                </td>
+                <td>
+                    <input type="text" ng-model="pm" required name="pm_name"/>
+                    <span style="color:red" ng-show="addProject.pm_name.$dirty && addProject.pm_name.$invalid">
+                        <span ng-show="addProject.pm_name.$error.required">
+                            Project Manager is required.
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Billing Type
+                </td>
+                <td>
+                    <select ng-model="billtype" ng-options="item for item in bill_type_options" required name="billtype_name">
+                    </select>
+                    <span style="color:red" ng-show="addProject.billtype_name.$dirty && addProject.billtype_name.$invalid">
+                        <span ng-show="addProject.billtype_name.$error.required">
+                            Bill type is required.
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    Start date
+                </td>
+                <td>
+                    <input type="date" ng-model="sdate" required name="start_date"/>
+                    <span style="color:red" ng-show="addProject.start_date.$dirty && addProject.start_date.$invalid">
+                        <span ng-show="addProject.start_date.$error.required">
+                            Start Date is required.
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    Technology
+                </td>
+                <td>
+                    <input type="text" ng-model="tech" required name="technology"/>
+                    <span style="color:red" ng-show="addProject.technology.$dirty && addProject.technology.$invalid">
+                        <span ng-show="addProject.technology.$error.required">
+                            Technology is required.
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Status
+                </td>
+                <td>
+                    <select ng-model="stat" ng-options="item for item in status_options" required name="project_status">
+                    </select>
+                    <span style="color:red" ng-show="addProject.project_status.$dirty && addProject.project_status.$invalid">
+                        <span ng-show="addProject.project_status.$error.required">
+                            Status is required.
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    Vertical
+                </td>
+                <td>
+                    <select ng-model="vertical" ng-options="item for item in vertical_options" required name="industry">
+                    </select>
+                    <span style="color:red" ng-show="addProject.project_status.$dirty && addProject.project_status.$invalid">
+                        <span ng-show="addProject.project_status.$error.required">
+                            Status is required.
+                        </span>
+                    </span>
+                </td>
+                <td>
+                    Project Category
+                </td>
+                <td>
+                    <select ng-model="category" ng-options="item for item in category_options" required name="project_category">
+                    </select>
+                    <span style="color:red" ng-show="addProject.project_category.$dirty && addProject.project_category.$invalid">
+                        <span ng-show="addProject.project_category.$error.required">
+                            Project category is required.
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Description
+                </td>
+                <td>
+                    <textarea ng-model="detail" required name="description"/>
+                    </textarea>
+                    <span style="color:red" ng-show="addProject.description.$dirty && addProject.description.$invalid">
+                        <span ng-show="addProject.description.$error.required">
+                            Description is required.
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+             
+                    <button type="submit" ng-disabled="addProject.$invalid" value="Add" id="submitBtn" ng-click="showHide()">
+                        Add
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="table">
+        <h3>
+            Projects
+        </h3>
+        <table st-table="projects" class="table table-striped">
+            <tr>
+                <td>
+                    <b>
+                        Project Name
+                    </b>
+                </td>
+                <td>
+                    <input st-search="project" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+                </td>
+                <td>
+                    <b>
+                        Bill Type
+                    </b>
+                </td>
+                <td>
+                    <select st-search="billtype">
+                        <option value="">
+                            All
+                        </option>
+                        <option ng-repeat="bill_type in bill_type_options" value="{{bill_type}}">
+                            {{bill_type}}
+                        </option>
+                    </select>
+                </td>
+                <td>
+                    <b>
+                        Project Status
+                    </b>
+                </td>
+                <td>
+                    <select st-search="stat">
+                        <option value="">
+                            All
+                        </option>
+                        <option ng-repeat="status in status_options" value="{{status}}">
+                            {{status}}
+                        </option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table st-table="projects" class="table">
+            <thead>
+                <tr>
+                    <th st-sort="project">
+                        Project
+                    </th>
+                    <th st-sort="customer">
+                        Customer
+                    </th>
+                    <th st-sort="pm">
+                        Project Manager
+                    </th>
+                    <th st-sort="billtype">
+                        Bill type
+                    </th>
+                    <th st-sort="sdate">
+                        Start Date
+                    </th>
+                    <th st-sort="tech">
+                        Technology
+                    </th>
+                    <th st-sort="stat">
+                        Project Status
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in projects track by $index">
+                
+                    <td>
+
+                        <a ng-href="#/projects/{{row.id}}">{{row.project}}</a>
+                    </td>
+                    <td>
+                         <a ng-href="#">{{row.customer}}</a>
+                    </td>
+                    <td>
+                         <a ng-href="#">{{row.pm }}</a>
+                    </td>
+                    <td>
+                        {{row.billtype }}
+                    </td>
+                    <td>
+                        {{row.sdate | date:'MM/dd/yyyy' }}
+                    </td>
+                    <td>
+                        {{row.tech }}
+                    </td>
+                    <td>
+                        {{row.stat }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
