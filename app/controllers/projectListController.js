@@ -28,8 +28,8 @@ spaceApp.controller('projectListController', function($scope, $http, jsonService
             category: $scope.category,
             detail: $scope.detail
         });
-        // localStorage.setItem('projects', JSON.stringify($scope.projects));
+       
         localstorageService.setObject('projects', $scope.projects);
-        // localstorageService.set('projects',JSON.stringify($scope.projects));
+     
     }
 });
