@@ -1,6 +1,6 @@
 table {
-    border-collapse: collapse;
-
+  border-collapse: collapse;
+  width: 100%;  
 }
 
 th {
@@ -14,11 +14,8 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
-#showAdd,#search,#table,#filterByYear
- {
- 
-    padding: 15px;
-   
+#showAdd,#search,#table,#filterByYear{
+ padding: 15px;  
 }
 
 form {
