@@ -122,14 +122,14 @@
 					<div class="notifications-container" ng-if="notifications.length">\
 						<div class="{{note.type}}" ng-repeat="note in notifications" ng-class="note.animation">\
 							<span class="message" ng-bind-html="note.message"></span>\
-							<span class="' + iconClasses + ' close-click" style="font-weight:bold;font-size:18px" ng-click="close($index)"><i class="fa fa-times" style="color:white"></i></span>\
+							<span class="" style="font-weight:bold;font-size:18px" ng-click="close($index)"><i class="fa fa-times" style="color:white"></i></span>\
 						</div>\
 					</div>\
 				' : '\
 					<div class="notifications-container" ng-if="notifications.length">\
 						<div class="{{note.type}}" ng-repeat="note in notifications" ng-class="note.animation">\
 							<span class="message" >{{note.message}}</span>\
-							<span class="' + iconClasses + ' close-click" style="font-weight:bold;font-size:18px;" ng-click="close($index)"><i class="fa fa-times" style="color:white"></i></span>\
+							<span class="" style="font-weight:bold;font-size:18px;" ng-click="close($index)"><i class="fa fa-times" style="color:white"></i></span>\
 						</div>\
 					</div>\
 				'

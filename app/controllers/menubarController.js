@@ -1,7 +1,7 @@
-spaceApp.controller('menubarController',['$scope','jsonService',function($scope,jsonService){
+spaceApp.controller('menubarController',['$scope','jsonService',function($scope,JSONService){
 	var i=0
 	
-	jsonService.fetchAllJson("currentUser").success(function(data) {
+	JSONService.fetchAllJson("currentUser").success(function(data) {
     	$scope.user = data
   	});
 
