@@ -29,5 +29,6 @@ spaceApp.controller('projectListController', function($scope, $http, jsonService
             detail: $scope.detail
         });
         localstorageService.setObject('projects', $scope.projects);
+
     }
 });
